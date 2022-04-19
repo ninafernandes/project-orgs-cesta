@@ -1,4 +1,4 @@
-import { StatusBar, SafeAreaView, View } from 'react-native';
+import { StatusBar, SafeAreaView } from 'react-native';
 import React from 'react';
 import {
   useFonts,
@@ -6,6 +6,7 @@ import {
   Montserrat_700Bold
 }
   from '@expo-google-fonts/montserrat'
+import AppLoading from 'expo-app-loading';
 
 import Cesta from './src/telas/Cesta'
 import mock from './src/mocks/cesta'
@@ -18,7 +19,7 @@ export default function App() {
   });
 
   if (!fonteCarregada) {
-    return <View />
+    return <AppLoading />
   }
   // Retorna uma função chamada APP.
   return (
