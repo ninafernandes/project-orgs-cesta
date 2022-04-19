@@ -1,12 +1,14 @@
 import { StatusBar, SafeAreaView, View } from 'react-native';
 import React from 'react';
-import Cesta from './src/telas/Cesta'
 import {
   useFonts,
   Montserrat_400Regular,
   Montserrat_700Bold
 }
   from '@expo-google-fonts/montserrat'
+
+import Cesta from './src/telas/Cesta'
+import mock from './src/mocks/cesta'
 
 export default function App() {
 
@@ -21,9 +23,15 @@ export default function App() {
   // Retorna uma função chamada APP.
   return (
     // SafeAreaView faz com que a barra de status e a barrinha de navegação seja evitada no iOS.
+   
+    /*Quando colocado ...mock, removemos a camada externa e passamos
+    cada parâmetro como um parâmetro da cesta
+    é igual a:
+    topo={mock.topo} detalhes={mock.detalhes}
+    */
     <SafeAreaView>
       <StatusBar />
-      <Cesta />
+      <Cesta {...mock} /> 
     </SafeAreaView>
   );
 } 

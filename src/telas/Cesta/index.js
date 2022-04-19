@@ -5,12 +5,12 @@ import { borderLeftColor } from 'react-native/Libraries/Components/View/ReactNat
 import Topo from './componentes/topo'
 import Detalhes from './componentes/detalhes'
 
-export default function Cesta() {
+export default function Cesta({ topo, detalhes }) {
     // Adicionando um fragmento que vai agrupar os componentes (return)
     return <>
-        <Topo />
+        <Topo {...topo}/>
         <View style={estilos.cesta}>
-            <Detalhes />
+            <Detalhes {...detalhes} />
         </View>
     </>
 }
