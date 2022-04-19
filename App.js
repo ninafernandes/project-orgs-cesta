@@ -30,7 +30,8 @@ export default function App() {
     é igual a:
     topo={mock.topo} detalhes={mock.detalhes}
     */
-    <SafeAreaView>
+   // O flex faz com que a view seja do tamanho da tela. Ele só carrega o que está visivel.
+    <SafeAreaView style={{ flex: 1 }}>
       <StatusBar />
       <Cesta {...mock} /> 
     </SafeAreaView>
